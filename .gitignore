@@ -5,3 +5,5 @@ ProcessCorrupt/bin/*
 ProcessCorrupt/obj/*
 packages/*
 .vscode
+/LinuxSideProgramCPlusPlus/obj/x64/Release
+/LinuxSideProgramCPlusPlus/bin/x64/Release
