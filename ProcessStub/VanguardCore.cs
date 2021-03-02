@@ -118,8 +118,8 @@ namespace Vanguard
         {
             var partial = new PartialSpec("VanguardSpec");
 
-            partial[VSPEC.NAME] = "ProcessStub";
-            partial[VSPEC.SYSTEM] = "Windows";
+            partial[VSPEC.NAME] = "LinuxStub";
+            partial[VSPEC.SYSTEM] = "Linux";
             partial[VSPEC.GAMENAME] = string.Empty;
             partial[VSPEC.SYSTEMPREFIX] = string.Empty;
             partial[VSPEC.OPENROMFILENAME] = string.Empty;

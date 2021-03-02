@@ -6,7 +6,7 @@ namespace Vanguard
     using ProcessStub;
     using RTCV.CorruptCore;
     using RTCV.NetCore;
-    using RTCV.ProcessCorrupt;
+    //using RTCV.ProcessCorrupt;
     using RTCV.Vanguard;
 
     public static class VanguardImplementation
@@ -59,10 +59,10 @@ namespace Vanguard
                     case RTCV.NetCore.Commands.Remote.AllSpecSent:
                         {
                             //We still need to set the emulator's path
-                            AllSpec.VanguardSpec.Update(VSPEC.EMUDIR, ProcessWatch.currentDir);
+                            AllSpec.VanguardSpec.Update(VSPEC.EMUDIR, Hook.currentDir);
                             SyncObjectSingleton.FormExecute(() =>
                             {
-                                ProcessWatch.UpdateDomains();
+                                Hook.UpdateDomains();
                             });
                         }
                         break;
@@ -76,60 +76,60 @@ namespace Vanguard
 
                     case RTCV.NetCore.Commands.Remote.PreCorruptAction:
 
-                        SyncObjectSingleton.FormExecute(() =>
-                        {
-                            lock (ProcessWatch.CorruptLock)
-                            {
-                                if (ProcessWatch.SuspendProcess)
-                                {
-                                    if (!ProcessWatch.p?.Suspend() ?? true && !suspendWarned)
-                                    {
-                                        suspendWarned = (MessageBox.Show("Failed to suspend a thread!\nWould you like to continue to receive warnings?", "Failed to suspend thread", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes);
-                                    }
-                                }
+                        //SyncObjectSingleton.FormExecute(() =>
+                        //{
+                        //    lock (Hook.CorruptLock)
+                        //    {
+                        //        if (Hook.SuspendProcess)
+                        //        {
+                        //            if (!Hook.p?.Suspend() ?? true && !suspendWarned)
+                        //            {
+                        //                suspendWarned = (MessageBox.Show("Failed to suspend a thread!\nWould you like to continue to receive warnings?", "Failed to suspend thread", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes);
+                        //            }
+                        //        }
 
-                                ProcessWatch.DontChangeMemoryProtection = true;
-                                var count = 0;
-                                foreach (var m in MemoryDomains.MemoryInterfaces.Values)
-                                {
-                                    if (m.MD is ProcessMemoryDomain pmd)
-                                    {
-                                        if (!pmd.SetMemoryProtection(ProcessExtensions.MemoryProtection.ExecuteReadWrite))
-                                            count++;
-                                    }
-                                }
+                        //        Hook.DontChangeMemoryProtection = true;
+                        //        var count = 0;
+                        //        foreach (var m in MemoryDomains.MemoryInterfaces.Values)
+                        //        {
+                        //            if (m.MD is ProcessMemoryDomain pmd)
+                        //            {
+                        //                if (!pmd.SetMemoryProtection(ProcessExtensions.MemoryProtection.ExecuteReadWrite))
+                        //                    count++;
+                        //            }
+                        //        }
 
-                                Console.WriteLine($"PreCorrupt\n" +
-                                                  $"Total domains: {MemoryDomains.MemoryInterfaces.Values.Count}\n" +
-                                                  $"Errors: {count}");
-                            }
-                        });
+                        //        Console.WriteLine($"PreCorrupt\n" +
+                        //                          $"Total domains: {MemoryDomains.MemoryInterfaces.Values.Count}\n" +
+                        //                          $"Errors: {count}");
+                        //    }
+                        //});
 
                         break;
 
                     case RTCV.NetCore.Commands.Remote.PostCorruptAction:
-                        SyncObjectSingleton.FormExecute(() =>
-                        {
-                            lock (ProcessWatch.CorruptLock)
-                            {
-                                foreach (var m in MemoryDomains.MemoryInterfaces.Values)
-                                {
-                                    if (m.MD is ProcessMemoryDomain pmd)
-                                    {
-                                        pmd.ResetMemoryProtection();
-                                        pmd.FlushInstructionCache();
-                                    }
-                                }
-                                ProcessWatch.DontChangeMemoryProtection = false;
-                                if (ProcessWatch.SuspendProcess)
-                                {
-                                    if (!ProcessWatch.p?.Resume() ?? true && !suspendWarned)
-                                    {
-                                        suspendWarned = (MessageBox.Show("Failed to resume a thread!\nWould you like to continue to receive warnings?", "Failed to resume thread", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes);
-                                    }
-                                }
-                            }
-                        });
+                        //SyncObjectSingleton.FormExecute(() =>
+                        //{
+                        //    lock (Hook.CorruptLock)
+                        //    {
+                        //        foreach (var m in MemoryDomains.MemoryInterfaces.Values)
+                        //        {
+                        //            if (m.MD is ProcessMemoryDomain pmd)
+                        //            {
+                        //                pmd.ResetMemoryProtection();
+                        //                pmd.FlushInstructionCache();
+                        //            }
+                        //        }
+                        //        Hook.DontChangeMemoryProtection = false;
+                        //        if (Hook.SuspendProcess)
+                        //        {
+                        //            if (!Hook.p?.Resume() ?? true && !suspendWarned)
+                        //            {
+                        //                suspendWarned = (MessageBox.Show("Failed to resume a thread!\nWould you like to continue to receive warnings?", "Failed to resume thread", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes);
+                        //            }
+                        //        }
+                        //    }
+                        //});
                         break;
 
                     case RTCV.NetCore.Commands.Remote.CloseGame:
@@ -138,12 +138,12 @@ namespace Vanguard
                     case RTCV.NetCore.Commands.Remote.DomainGetDomains:
                         SyncObjectSingleton.FormExecute(() =>
                         {
-                            e.setReturnValue(ProcessWatch.GetInterfaces());
+                            e.setReturnValue(Hook.GetInterfaces());
                         });
                         break;
 
                     case RTCV.NetCore.Commands.Remote.DomainRefreshDomains:
-                        SyncObjectSingleton.FormExecute(() => { ProcessWatch.UpdateDomains(); });
+                        SyncObjectSingleton.FormExecute(() => { Hook.UpdateDomains(); });
                         break;
 
                     case RTCV.NetCore.Commands.Remote.EventEmuMainFormClose:

@@ -32,7 +32,7 @@ namespace ProcessStub
             lvProcesses.Columns.Add("Process", lvProcesses.Width - 20);
 
             var inProcesses = Process.GetProcesses();
-            lvProcesses.SmallImageList = ProcessWatch.ProcessIcons;
+            lvProcesses.SmallImageList = Hook.ProcessIcons;
             lvProcesses.HeaderStyle = ColumnHeaderStyle.None;
 
             Bitmap emptybmp = new Bitmap(32, 32);
@@ -45,17 +45,17 @@ namespace ProcessStub
             {
                 try
                 {
-                    if (!ProcessWatch.IsExecutableNameBlacklisted(process.ProcessName))
+                    if (!Hook.IsExecutableNameBlacklisted(process.ProcessName))
                     {
-                        if (!ProcessWatch.ProcessIcons.Images.ContainsKey(process.ProcessName))
+                        if (!Hook.ProcessIcons.Images.ContainsKey(process.ProcessName))
                         {
                             var icon = process.GetIcon();
                             if (icon == null)
                             {
-                                ProcessWatch.ProcessIcons.Images.Add(process.ProcessName, emptybmp);
+                                Hook.ProcessIcons.Images.Add(process.ProcessName, emptybmp);
                             }
                             else
-                                ProcessWatch.ProcessIcons.Images.Add(process.ProcessName, icon);
+                                Hook.ProcessIcons.Images.Add(process.ProcessName, icon);
                         }
 
                         lvProcesses.Items.Add(new ListViewItem($"{process.ProcessName} : {process.Id}", process.ProcessName) { Tag = process });
@@ -95,7 +95,7 @@ namespace ProcessStub
                     Close();
                 }
 
-                if (ProcessWatch.IsProcessBlacklisted(RequestedProcess))
+                if (Hook.IsProcessBlacklisted(RequestedProcess))
                 {
                     MessageBox.Show($"Couldn't access process {name}. The process is blacklisted!");
                     RequestedProcess = null;

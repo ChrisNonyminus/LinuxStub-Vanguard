@@ -1,4 +1,4 @@
-﻿namespace ProcessStub
+namespace ProcessStub
 {
     partial class StubForm
     {
@@ -31,20 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StubForm));
             this.label5 = new System.Windows.Forms.Label();
             this.pnTarget = new System.Windows.Forms.Panel();
-            this.btnUnloadTarget = new System.Windows.Forms.Button();
-            this.btnBrowseTarget = new System.Windows.Forms.Button();
-            this.lbTarget = new System.Windows.Forms.Label();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbClientAddr = new System.Windows.Forms.TextBox();
             this.btnTargetSettings = new System.Windows.Forms.Button();
             this.pnSideBar = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTargetStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnGlitchHarvesterOpen = new System.Windows.Forms.Panel();
-            this.tbFilterText = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnRefreshDomains = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbAutoAttach = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnStartClient = new System.Windows.Forms.Button();
             this.pnTarget.SuspendLayout();
             this.pnSideBar.SuspendLayout();
             this.SuspendLayout();
@@ -65,66 +64,61 @@
             this.pnTarget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnTarget.Controls.Add(this.btnUnloadTarget);
-            this.pnTarget.Controls.Add(this.btnBrowseTarget);
-            this.pnTarget.Controls.Add(this.lbTarget);
+            this.pnTarget.Controls.Add(this.btnStartClient);
+            this.pnTarget.Controls.Add(this.btnConnect);
+            this.pnTarget.Controls.Add(this.label3);
+            this.pnTarget.Controls.Add(this.tbClientAddr);
             this.pnTarget.Location = new System.Drawing.Point(129, 49);
             this.pnTarget.Name = "pnTarget";
             this.pnTarget.Size = new System.Drawing.Size(359, 122);
             this.pnTarget.TabIndex = 13;
             this.pnTarget.Tag = "color:dark1";
             // 
-            // btnUnloadTarget
+            // btnConnect
             // 
-            this.btnUnloadTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUnloadTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnUnloadTarget.FlatAppearance.BorderSize = 0;
-            this.btnUnloadTarget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUnloadTarget.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.btnUnloadTarget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnUnloadTarget.Location = new System.Drawing.Point(263, 12);
-            this.btnUnloadTarget.Name = "btnUnloadTarget";
-            this.btnUnloadTarget.Size = new System.Drawing.Size(84, 23);
-            this.btnUnloadTarget.TabIndex = 42;
-            this.btnUnloadTarget.TabStop = false;
-            this.btnUnloadTarget.Tag = "color:dark2";
-            this.btnUnloadTarget.Text = "Unload";
-            this.btnUnloadTarget.UseVisualStyleBackColor = false;
-            this.btnUnloadTarget.Visible = false;
-            this.btnUnloadTarget.Click += new System.EventHandler(this.BtnReleaseTarget_Click);
+            this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnConnect.FlatAppearance.BorderSize = 0;
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.btnConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnConnect.Location = new System.Drawing.Point(244, 32);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(103, 23);
+            this.btnConnect.TabIndex = 179;
+            this.btnConnect.TabStop = false;
+            this.btnConnect.Tag = "color:dark2";
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // btnBrowseTarget
+            // label3
             // 
-            this.btnBrowseTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnBrowseTarget.FlatAppearance.BorderSize = 0;
-            this.btnBrowseTarget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowseTarget.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.btnBrowseTarget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBrowseTarget.Location = new System.Drawing.Point(12, 12);
-            this.btnBrowseTarget.Name = "btnBrowseTarget";
-            this.btnBrowseTarget.Size = new System.Drawing.Size(72, 23);
-            this.btnBrowseTarget.TabIndex = 35;
-            this.btnBrowseTarget.TabStop = false;
-            this.btnBrowseTarget.Tag = "color:dark2";
-            this.btnBrowseTarget.Text = "Browse";
-            this.btnBrowseTarget.UseVisualStyleBackColor = false;
-            this.btnBrowseTarget.Click += new System.EventHandler(this.BtnBrowseTarget_Click);
-            // 
-            // lbTarget
-            // 
-            this.lbTarget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.lbTarget.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lbTarget.ForeColor = System.Drawing.Color.PaleGoldenrod;
-            this.lbTarget.Location = new System.Drawing.Point(12, 39);
-            this.lbTarget.Name = "lbTarget";
-            this.lbTarget.Padding = new System.Windows.Forms.Padding(3, 6, 1, 1);
-            this.lbTarget.Size = new System.Drawing.Size(335, 72);
-            this.lbTarget.TabIndex = 36;
-            this.lbTarget.Tag = "color:dark3";
-            this.lbTarget.Text = "No target selected";
-            this.lbTarget.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(112, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.TabIndex = 178;
+            this.label3.Text = "Client Address";
+            // 
+            // tbClientAddr
+            // 
+            this.tbClientAddr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbClientAddr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.tbClientAddr.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.tbClientAddr.ForeColor = System.Drawing.Color.White;
+            this.tbClientAddr.Location = new System.Drawing.Point(199, 5);
+            this.tbClientAddr.Multiline = true;
+            this.tbClientAddr.Name = "tbClientAddr";
+            this.tbClientAddr.Size = new System.Drawing.Size(148, 21);
+            this.tbClientAddr.TabIndex = 177;
+            this.tbClientAddr.Tag = "color:dark2";
+            this.tbClientAddr.TextChanged += new System.EventHandler(this.tbClientAddr_TextChanged);
             // 
             // btnTargetSettings
             // 
@@ -143,7 +137,6 @@
             this.btnTargetSettings.TabStop = false;
             this.btnTargetSettings.Tag = "color:dark1";
             this.btnTargetSettings.UseVisualStyleBackColor = false;
-            this.btnTargetSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnTargetSettings_MouseDown);
             // 
             // pnSideBar
             // 
@@ -165,13 +158,14 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(9, 125);
+            this.label4.Location = new System.Drawing.Point(9, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 127);
+            this.label4.Size = new System.Drawing.Size(102, 171);
             this.label4.TabIndex = 124;
             this.label4.Tag = "";
-            this.label4.Text = "Don\'t be stupid. Don\'t corrupt Windows, don\'t corrupt online games.\r\n\r\nRun this i" +
-    "n a VM for maximum safety.";
+            this.label4.Text = "Don\'t be stupid. Don\'t corrupt Linux, don\'t corrupt online games, anything that u" +
+    "ses online services.\r\n\r\nRun this in a VM or other virutalized Linux environment " +
+    "for maximum safety.";
             // 
             // lbTargetStatus
             // 
@@ -204,35 +198,6 @@
             this.pnGlitchHarvesterOpen.Tag = "color:light1";
             this.pnGlitchHarvesterOpen.Visible = false;
             // 
-            // tbFilterText
-            // 
-            this.tbFilterText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFilterText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.tbFilterText.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.tbFilterText.ForeColor = System.Drawing.Color.White;
-            this.tbFilterText.Location = new System.Drawing.Point(219, 191);
-            this.tbFilterText.Multiline = true;
-            this.tbFilterText.Name = "tbFilterText";
-            this.tbFilterText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbFilterText.Size = new System.Drawing.Size(257, 34);
-            this.tbFilterText.TabIndex = 175;
-            this.tbFilterText.Tag = "color:dark2";
-            this.tbFilterText.Text = ".exe\r\n.dll";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 194);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 26);
-            this.label1.TabIndex = 176;
-            this.label1.Text = "Filter text:\r\n(one per line)";
-            // 
             // btnRefreshDomains
             // 
             this.btnRefreshDomains.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -249,36 +214,52 @@
             this.btnRefreshDomains.Tag = "color:dark2";
             this.btnRefreshDomains.Text = "Refresh Domains";
             this.btnRefreshDomains.UseVisualStyleBackColor = false;
-            this.btnRefreshDomains.Visible = false;
             this.btnRefreshDomains.Click += new System.EventHandler(this.BtnRefreshDomains_Click);
             // 
-            // label3
+            // label1
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(138, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 178;
-            this.label3.Text = "Auto-attach";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(131, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 13);
+            this.label1.TabIndex = 178;
+            this.label1.Text = "Windows Side\'s IP Address:";
             // 
-            // tbAutoAttach
+            // label7
             // 
-            this.tbAutoAttach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAutoAttach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.tbAutoAttach.Enabled = false;
-            this.tbAutoAttach.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.tbAutoAttach.ForeColor = System.Drawing.Color.White;
-            this.tbAutoAttach.Location = new System.Drawing.Point(219, 231);
-            this.tbAutoAttach.Multiline = true;
-            this.tbAutoAttach.Name = "tbAutoAttach";
-            this.tbAutoAttach.Size = new System.Drawing.Size(148, 21);
-            this.tbAutoAttach.TabIndex = 177;
-            this.tbAutoAttach.Tag = "color:dark2";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(131, 234);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 178;
+            this.label7.Text = "ipplaceholder";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // btnStartClient
+            // 
+            this.btnStartClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStartClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnStartClient.FlatAppearance.BorderSize = 0;
+            this.btnStartClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartClient.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.btnStartClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnStartClient.Location = new System.Drawing.Point(3, 96);
+            this.btnStartClient.Name = "btnStartClient";
+            this.btnStartClient.Size = new System.Drawing.Size(103, 23);
+            this.btnStartClient.TabIndex = 180;
+            this.btnStartClient.TabStop = false;
+            this.btnStartClient.Tag = "color:dark2";
+            this.btnStartClient.Text = "Start";
+            this.btnStartClient.UseVisualStyleBackColor = false;
+            this.btnStartClient.Click += new System.EventHandler(this.btnStartClient_Click);
             // 
             // StubForm
             // 
@@ -286,13 +267,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(500, 261);
-            this.Controls.Add(this.btnRefreshDomains);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbFilterText);
-            this.Controls.Add(this.tbAutoAttach);
-            this.Controls.Add(this.pnSideBar);
             this.Controls.Add(this.btnTargetSettings);
+            this.Controls.Add(this.btnRefreshDomains);
+            this.Controls.Add(this.pnSideBar);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnTarget);
             this.Controls.Add(this.label5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -300,10 +279,9 @@
             this.MinimumSize = new System.Drawing.Size(516, 300);
             this.Name = "StubForm";
             this.Tag = "color:dark2";
-            this.Text = "Process Stub";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StubForm_FormClosing);
-            this.Load += new System.EventHandler(this.StubForm_Load);
+            this.Text = "Linux Stub - Windows Side";
             this.pnTarget.ResumeLayout(false);
+            this.pnTarget.PerformLayout();
             this.pnSideBar.ResumeLayout(false);
             this.pnSideBar.PerformLayout();
             this.ResumeLayout(false);
@@ -317,17 +295,16 @@
         public System.Windows.Forms.Button btnTargetSettings;
         private System.Windows.Forms.Panel pnSideBar;
         internal System.Windows.Forms.Panel pnGlitchHarvesterOpen;
-        private System.Windows.Forms.Button btnBrowseTarget;
-        public System.Windows.Forms.Label lbTarget;
-        private System.Windows.Forms.Button btnUnloadTarget;
         public System.Windows.Forms.Label lbTargetStatus;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox tbFilterText;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRefreshDomains;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox tbAutoAttach;
+        public System.Windows.Forms.TextBox tbClientAddr;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnStartClient;
     }
 }
 

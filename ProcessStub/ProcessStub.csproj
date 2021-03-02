@@ -67,19 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connector.cs" />
     <Compile Include="HookProcessForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HookProcessForm.designer.cs">
       <DependentUpon>HookProcessForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessWatch.cs" />
-    <Compile Include="MemoryProtectionSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MemoryProtectionSelector.Designer.cs">
-      <DependentUpon>MemoryProtectionSelector.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Hook.cs" />
+    <Compile Include="LinuxMemoryDomain.cs" />
     <Compile Include="StubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,9 +94,6 @@
     <Compile Include="VanguardImplementation.cs" />
     <EmbeddedResource Include="HookProcessForm.resx">
       <DependentUpon>HookProcessForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MemoryProtectionSelector.resx">
-      <DependentUpon>MemoryProtectionSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StubForm.resx">
       <DependentUpon>StubForm.cs</DependentUpon>

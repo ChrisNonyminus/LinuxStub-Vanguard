@@ -52,7 +52,7 @@ namespace ProcessStub
         {
             bw.Dispose();
             Hide();
-            ProcessWatch.progressForm = null;
+            Hook.progressForm = null;
 
             if (postAction != null)
                 SyncObjectSingleton.FormExecute(() =>

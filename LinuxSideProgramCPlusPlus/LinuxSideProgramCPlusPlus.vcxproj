@@ -84,6 +84,7 @@
     <ClCompile Include="Maps.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="Proc.cpp" />
+    <ClCompile Include="proc_maps_parser\pmparser.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connector.h" />
@@ -91,11 +92,15 @@
     <ClInclude Include="Maps.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Proc.h" />
+    <ClInclude Include="proc_maps_parser\pmparser.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
